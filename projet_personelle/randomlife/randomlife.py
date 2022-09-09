@@ -3,31 +3,55 @@ import random
 import json
 import os
 
+"""
+TACHE DU JOURS :
+    crée class gestion fichier json :
+        **le maitre en parent de chaque classe**
+        -lire fichier json et returner le contenue 
+        -écrie un fichier 
+        -print le contenue d'un fichier json
+    
+    class main 
+        -def selection aleatoire
+        -def mélange d'activiter de differente liste
+    
+    **crée 2 table json avec des activiter en demos**
+        
+    
+    
 
 """
-probleme du programme : 
-    
-    
-Chose a faire :
-    -crée une class pour gérer les fichier json qui seras parent des class liste création, utilisateur
-    
 
 """
-"""
+chose a faire : 
 
-def rajout element_et_choix liste
-    -verifier le nombre de liste
-    -ressort le nom des liste et leurs attribut une lettre pour selection la liste ou l'element doit etre rajouter
+    IDEE :
+        -Envoiyer un mails a des contact une fois une tache effetuer avec un fichier join preuve(image,screenshot)
+        
     
+    DONNEE:
+ 
+    -crée fichier google_form pour récuperer les idée des gens
+    -crée un convertisseur google_form a json au besoins
     
-
-def selection des liste
-nombre random ,gerer le %chance
-    interprete le nombre random pour selectionner une categorie (x)
+    AMELIORATION :
+   
+        
+        
     
-    si liste lens du mot >0 if type () "liste" continuer de faire des selection aleatoire 
-    
-
+    FONCTIONALITER :
+        -def fichier liste de la journée --> dossier tache --> nom du fichier : date du jours
+        -def coder les donner ufc-8 **"voire se que ces
+        -def divulguer la tache suivante une fois reussis
+        
+    class Action_utilisateur :
+        -crée une liste personaliser (nom+activiter)
+        
+        
+    class grapghique :
+        **apprendre Tkinter ou pygame
+        -crée les boutons 
+        -associer les boutons a des actions
 """
 
 REPERTOIRE_DATA ="data"
