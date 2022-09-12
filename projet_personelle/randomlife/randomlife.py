@@ -41,7 +41,6 @@ chose a faire :
     
     FONCTIONALITER :
         -def fichier liste de la journée --> dossier tache --> nom du fichier : date du jours
-        -def coder les donner ufc-8 **"voire se que ces
         -def divulguer la tache suivante une fois reussis
         
     class Action_utilisateur :
@@ -61,6 +60,59 @@ REPERTOIRE_DATA ="data"
 if not os.path.exists(REPERTOIRE_DATA):
     os.mkdir(REPERTOIRE_DATA)
 list_activiter_total =[]
+
+class Controle_json:
+    def __init__(self,os_join):
+        if "\*.json" in os_join:
+            self.file_road = os_join
+        else:
+            self.file_road = os_join+".json"
+        self.file_contenue = Controle_json.lecture_json()
+
+    def file_existe(self):
+        if not os.path.exists(self.road_file):
+            print("le fichier n'hesiste pas")
+            return False
+        return True
+
+    def cree_fichier(self):
+        open(self.file_road)
+
+    def lecture_json(self):
+        if self.file_existe():
+            return json.load(open(self.file_road))
+
+    def ecriture_json(self, contenue_update):
+        if self.file_existe():
+            if not contenue_update == self.file_contenue:
+                fichier = open(self.file_road,"w")
+                fichier.write(json.dumps(contenue_update))
+
+
+    # turn le fichier a convertie
+        """
+   
+
+    def verification_doublon(self):
+        #vérifie si le fichier et présent en 2 fois
+        #si oui assembler les 2 fichier  traduire , mélanger , reconvertir
+
+    def lecture_du_dossier(self):
+        #
+
+    def tchek_dossier_empty(self):
+        #return si le dossier contient 0,1 ou plusieur fichier
+
+    def fichier_existe(self,fichier_chemins=""):
+        #gestion erreur
+        #return true or false
+        if os.path.exists(fichier_chemins):
+            print("fichier déjat present")
+            return False
+        else :
+            open(fichier_chemins)
+            return True
+"""
 
 class Liste_createur:
     def __init__(self,nom_fichier = "activiter sans nom"):
@@ -267,10 +319,19 @@ class Action_utilisateur:
         #gerer cas erreur de ne mettre uniquement le mot de l'action
 
 class main:
+    #def mélangeur de liste
+    #recuperais les liste
     def __init__(self,utilisateur):
         self.utilisateur = utilisateur
 
+    def tache_du_jours(self):
+        self.utilisateur
 
+
+
+dossier_chemin = os.path.join(REPERTOIRE_DATA,"test1")
+Controle_json(dossier_chemin)
+"""
 if os.listdir("data"):
     utilisteur = Action_utilisateur()
     utilisteur.lire_le_fichier()
@@ -279,9 +340,6 @@ if os.listdir("data"):
     utilisteur.supprimer_activiter()
 Liste_createur("test1")
 Liste_createur("test2")
+"""
 
 
-
-
-
-#il vas crée un dictionnaire avec 2 cles l'index et le nom du fichier
