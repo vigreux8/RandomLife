@@ -67,20 +67,22 @@ class Controle_json:
             self.file_road = os_join
         else:
             self.file_road = os_join+".json"
-        self.file_contenue = Controle_json.lecture_json()
+        self.file_contenue = self.lecture_json()
 
     def file_existe(self):
-        if not os.path.exists(self.road_file):
+        if not os.path.exists(self.file_road):
             print("le fichier n'hesiste pas")
             return False
         return True
 
     def cree_fichier(self):
-        open(self.file_road)
+        fichier = open(self.file_road,"a")
+        fichier.close()
 
     def lecture_json(self):
         if self.file_existe():
-            return json.load(open(self.file_road))
+            if self.tchek_fichier_vide():
+                return json.load(open(self.file_road))
 
     def ecriture_json(self, contenue_update):
         if self.file_existe():
@@ -113,6 +115,16 @@ class Controle_json:
             open(fichier_chemins)
             return True
 """
+
+    def tchek_fichier_vide(self):
+        if self.file_existe():
+            fichier = open(self.file_road,"r")
+            file_contenue = fichier.read()
+            print(file_contenue)
+            if file_contenue == "":
+                return False
+            return True
+            #recuperais les donnais verifi si vide
 
 class Liste_createur:
     def __init__(self,nom_fichier = "activiter sans nom"):
@@ -329,8 +341,8 @@ class main:
 
 
 
-dossier_chemin = os.path.join(REPERTOIRE_DATA,"test1")
-Controle_json(dossier_chemin)
+dossier_chemin = os.path.join(REPERTOIRE_DATA,"test4")
+Controle_json(dossier_chemin).cree_fichier()
 """
 if os.listdir("data"):
     utilisteur = Action_utilisateur()
